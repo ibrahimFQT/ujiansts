@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   // ambil data dari API
   Future<List> getData() async {
     var response = await http.get(
-      Uri.parse("https://dummyjson.com/products?limit=10"),
+      Uri.parse("https://dummyjson.com/products"),
     );
 
     var data = json.decode(response.body);
