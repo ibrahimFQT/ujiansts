@@ -8,7 +8,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
 
-  // ambil data dari API
   Future<List> getData() async {
     var response = await http.get(
       Uri.parse("https://dummyjson.com/products"),
@@ -34,7 +33,6 @@ class MyApp extends StatelessWidget {
           future: getData(),
           builder: (context, snapshot) {
 
-            // loading
             if (!snapshot.hasData) {
               return Center(child: CircularProgressIndicator());
             }
@@ -64,7 +62,6 @@ class MyApp extends StatelessWidget {
                   child: Column(
                     children: [
 
-                      // FOTO
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.all(10),
@@ -75,7 +72,6 @@ class MyApp extends StatelessWidget {
                         ),
                       ),
 
-                      // NAMA
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 6),
                         child: Text(
@@ -86,7 +82,6 @@ class MyApp extends StatelessWidget {
                         ),
                       ),
 
-                      // RATING
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -97,13 +92,11 @@ class MyApp extends StatelessWidget {
                         ],
                       ),
 
-                      // HARGA
                       Text(
                         "¥ ${p['price']}",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
 
-                      // STOK
                       Text(
                         "Stok ${p['stock']}",
                         style: TextStyle(fontSize: 12),
