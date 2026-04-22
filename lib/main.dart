@@ -99,7 +99,7 @@ class MyApp extends StatelessWidget {
 
                       // HARGA
                       Text(
-                        "$ ${p['price']}",
+                        "¥ ${p['price']}",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
 
